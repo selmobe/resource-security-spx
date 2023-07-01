@@ -1,0 +1,62 @@
+body {
+    background-color: darkblue;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    color: gold;
+}
+
+img {
+    width: 150px;
+    height: 180px;
+}
+
+.A {
+    padding-top: 3%;
+    width:50%;
+    float: left;
+}
+
+.B {
+    width: 20%;
+    float: left;
+}
+
+.container {
+    width:100%;
+    height: 200px;
+}
+
+.container2 {
+    overflow-y: scroll;
+    position: relative;
+    left: 0px;
+    top:0px;
+    height: 300px;
+}
+
+td {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32px;
+    font-weight: 600;
+    border-style: dashed;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  ::-webkit-scrollbar-track {
+    background: grey; 
+}
+   
+  ::-webkit-scrollbar-thumb {
+    background: black; 
+}
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: black; 
+}

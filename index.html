@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="searchInput" oninput="search()" placeholder="Digite um código">
+    <table id="resultsTable">
+      <thead>
+        <tr>
+          <th>IMEI</th>
+          <th>IMEI2</th>
+          <th>Número de Série</th>
+          <th>Nome Completo</th>
+          <th>Equipamento</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <script>
+      function search() {
+        var searchText = document.getElementById('searchInput').value;
+        google.script.run.withSuccessHandler(displayResults).searchRecords(searchText);
+      }
+
+      function displayResults(results) {
+        var tableBody = document.querySelector('#resultsTable tbody');
+        tableBody.innerHTML = '';
+
+        results.forEach(function(result) {
+          var row = document.createElement('tr');
+          row.innerHTML = '<td>' + result.imei + '</td>' +
+                          '<td>' + result.imei2 + '</td>' +
+                          '<td>' + result.num_serie + '</td>' +
+                          '<td>' + result.nome_completo + '</td>' +
+                          '<td>' + result.equipamento + '</td>' +
+                          '<td>' + result.marca + '</td>' +
+                          '<td>' + result.modelo + '</td>';
+          tableBody.appendChild(row);
+        });
+      }
+    </script>
+  </body>
+</html>
